@@ -39,6 +39,9 @@
                   display: true,
                   text: "Sales",
                 },
+                ticks: {
+        stepSize: 5, // Set y-axis intervals to increments of 5
+      },
               },
             },
           },

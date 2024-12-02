@@ -1,10 +1,13 @@
 <template>
-  <div>
-    <h1>Interactive Bar Chart</h1>
+  <div >
+<div class="container text-center">
+  <h1>Interactive Bar Chart</h1>
+  <p>Current & Previous Months Sales by Product</p>
+</div>
     <div v-if="loading">Loading chart data...</div>
     <div v-else-if="error">{{ error }}</div>
     <div v-else>
-      <BarChart v-if="chartData" :chart-data="chartData" />
+      <BarChart class="bg-white" v-if="chartData" :chart-data="chartData" />
     </div>
   </div>
 </template>
@@ -59,20 +62,22 @@ export default {
   return {
     labels,
     datasets: [
+   
       {
-        label: "October Sales",
+        label: "Previous Month Sales",
         data: octSalesData,
-        backgroundColor: "blue",
-        order: 1, // Bars rendered below the line
-      },
-      {
-        label: "November Sales",
-        data: novSalesData,
         type: "line",
         borderColor: "red",
         borderWidth: 2,
         fill: false,
-        order: 2, // Line rendered above bars
+        order: 1,
+         // Bars rendered below the line
+      },
+      {
+        label: "Current Month Sales",
+        data: novSalesData,
+        backgroundColor: "blue",
+        order: 1,
       },
     ],
   };
@@ -91,8 +96,11 @@ export default {
 </script>
 
 <style>
-h1 {
+h1,p {
   text-align: center;
   margin-bottom: 20px;
+}
+.container{
+  background-image: url('https://themewagon.github.io/pharmative/images/hero_bg.jpg');
 }
 </style>
