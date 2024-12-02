@@ -1,95 +1,69 @@
 <template>
-  <div>
     <canvas ref="chartCanvas"></canvas>
-  </div>
-</template>
-
-<script>
-import { ref, onMounted, watch } from "vue";
-import { Chart, registerables } from "chart.js";
-
-Chart.register(...registerables);
-
-export default {
-  props: {
-    chartData: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const chartCanvas = ref(null);
-    let chartInstance = null;
-
-    const createChart = () => {
-      if (chartInstance) chartInstance.destroy();
-      chartInstance = new Chart(chartCanvas.value, {
-        type: "bar",
-        data: props.chartData,
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              position: "top",
-              labels: {
-                font: {
-                  size: 14,
-                },
-              },
-            },
-            tooltip: {
-              enabled: true,
-            },
-          },
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "Product",
-                font: {
-                  size: 14,
-                },
-              },
-            },
-            y: {
-              title: {
-                display: true,
-                text: "Sales",
-                font: {
-                  size: 14,
-                },
-              },
-              beginAtZero: true,
-            },
-          },
-        },
-      });
-    };
-
-    watch(
-      () => props.chartData,
-      () => {
-        if (props.chartData) {
-          createChart();
+  </template>
+  
+  <script>
+  import { ref, onMounted } from "vue";
+  import { Chart } from "chart.js/auto";
+  
+  export default {
+    props: ["chartData"],
+    setup(props) {
+      const chartCanvas = ref(null);
+      let chartInstance = null;
+  
+      const renderChart = () => {
+        if (chartInstance) {
+          chartInstance.destroy(); // Destroy existing chart instance
         }
-      },
-      { immediate: true }
-    );
-
-    onMounted(() => {
-      if (props.chartData) {
-        createChart();
-      }
-    });
-
-    return { chartCanvas };
-  },
-};
-</script>
-
-<style scoped>
-canvas {
-  max-width: 100%;
-  height: auto;
-}
-</style>
+        chartInstance = new Chart(chartCanvas.value, {
+          type: "bar",
+          data: props.chartData,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: true,
+                position: "top",
+              },
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Product",
+                },
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "Sales",
+                },
+              },
+            },
+          },
+        });
+      };
+  
+      onMounted(() => {
+        if (chartCanvas.value) {
+          renderChart();
+        } else {
+          console.error("Canvas element not found");
+        }
+      });
+  
+      return {
+        chartCanvas,
+      };
+    },
+  };
+  </script>
+  
+  <style>
+  canvas {
+    width: 100%;
+    margin: 0 auto;
+  }
+  </style>
+  

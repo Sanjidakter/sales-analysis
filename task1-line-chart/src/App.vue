@@ -4,7 +4,7 @@
     <div v-if="loading">Loading chart data...</div>
     <div v-else-if="error">{{ error }}</div>
     <div v-else>
-      <BarChart :chart-data="chartData" />
+      <BarChart v-if="chartData" :chart-data="chartData" />
     </div>
   </div>
 </template>
@@ -16,89 +16,83 @@ import BarChart from "./components/BarChart.vue";
 export default {
   components: { BarChart },
   setup() {
-    const chartData = ref(null);
     const loading = ref(true);
     const error = ref(null);
+    const chartData = ref(null);
 
-    const processChartData = (data) => {
-      const parsedData = data.map((item) => ({
-        ...item,
-        Date: new Date(item.Date),
-      }));
-
-      const today = new Date();
-      const currentMonth = today.getMonth();
-      const currentYear = today.getFullYear();
-      const previousMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-      const previousYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-
-      const groupSalesByProduct = (month, year) => {
-        return parsedData
-          .filter(
-            (item) =>
-              item.Date.getMonth() === month && item.Date.getFullYear() === year
-          )
-          .reduce((acc, item) => {
-            acc[item.Product] = (acc[item.Product] || 0) + item.MonthSales;
-            return acc;
-          }, {});
-      };
-
-      const currentMonthData = groupSalesByProduct(currentMonth, currentYear);
-      const previousMonthData = groupSalesByProduct(previousMonth, previousYear);
-
-      const allProducts = Array.from(
-        new Set([
-          ...Object.keys(currentMonthData),
-          ...Object.keys(previousMonthData),
-        ])
-      );
-
-      const currentMonthSales = allProducts.map(
-        (product) => currentMonthData[product] || 0
-      );
-      const previousMonthSales = allProducts.map(
-        (product) => previousMonthData[product] || 0
-      );
-
-      chartData.value = {
-        labels: allProducts,
-        datasets: [
-          {
-            label: "Current Month Sales",
-            data: currentMonthSales,
-            backgroundColor: "blue",
-            borderWidth: 1,
-          },
-          {
-            label: "Previous Month Sales",
-            data: previousMonthSales,
-            type: "line",
-            borderColor: "red",
-            borderWidth: 2,
-            tension: 0.4,
-            fill: false,
-          },
-        ],
-      };
-    };
-
-    const fetchChartData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await fetch("data.json"); // Place the JSON file in the `public` folder
-        if (!response.ok) throw new Error("Failed to fetch data");
-        const data = await response.json();
-        processChartData(data);
+        const response = await fetch("data.json"); // Replace with your JSON URL or path
+        const rawData = await response.json();
+        chartData.value = processChartData(rawData);
       } catch (err) {
-        error.value = err.message;
+        error.value = "Failed to load data";
+        console.error(err);
       } finally {
         loading.value = false;
       }
     };
 
-    onMounted(fetchChartData);
+    const processChartData = (data) => {
+  // Prepare datasets for October and November sales
+  const octoberSales = {};
+  const novemberSales = {};
 
-    return { chartData, loading, error };
+  data.forEach((item) => {
+    const dateParts = item.Date.split("/");
+    const month = parseInt(dateParts[1]);
+    const product = item.Product;
+
+    if (month === 10) {
+      octoberSales[product] = item.MonthSales;
+    } else if (month === 11) {
+      novemberSales[product] = item.MonthSales;
+    }
+  });
+
+  // Ensure both datasets contain all products
+  const labels = Array.from(new Set([...Object.keys(octoberSales), ...Object.keys(novemberSales)]));
+
+  const octSalesData = labels.map((product) => octoberSales[product] || 0);
+  const novSalesData = labels.map((product) => novemberSales[product] || 0);
+
+  return {
+    labels,
+    datasets: [
+      {
+        label: "October Sales",
+        data: octSalesData,
+        backgroundColor: "blue",
+        order: 1, // Bars rendered below the line
+      },
+      {
+        label: "November Sales",
+        data: novSalesData,
+        type: "line",
+        borderColor: "red",
+        borderWidth: 2,
+        fill: false,
+        order: 2, // Line rendered above bars
+      },
+    ],
+  };
+};
+
+
+    onMounted(fetchData);
+
+    return {
+      loading,
+      error,
+      chartData,
+    };
   },
 };
 </script>
+
+<style>
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+</style>
