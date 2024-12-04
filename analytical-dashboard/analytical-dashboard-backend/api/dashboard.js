@@ -28,5 +28,43 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'Error fetching data', error: err.message });
   }
 });
+// GET /api/dashboard/average-income
+router.get('/average-income', async (req, res) => {
+  try {
+    const averages = await Dashboard.aggregate([
+      {
+        $group: {
+          _id: "$MaritalStatus", // Group by MaritalStatus
+          averageIncome: { $avg: "$Income" }, // Calculate average income
+        },
+      },
+    ]);
+
+    res.status(200).json(averages);
+  } catch (err) {
+    res.status(500).json({ message: 'Error calculating averages', error: err.message });
+  }
+});
+
+// GET /api/dashboard/average-age
+router.get('/average-age', async (req, res) => {
+  try {
+    const averages = await Dashboard.aggregate([
+      {
+        $group: {
+          _id: null, // Group all documents together
+          averageAge: { $avg: "$Age" }, // Calculate the average age
+        },
+      },
+    ]);
+
+    // Extract the average age value or handle empty result
+    const averageAge = averages.length > 0 ? averages[0].averageAge : null;
+
+    res.status(200).json({ averageAge });
+  } catch (err) {
+    res.status(500).json({ message: 'Error calculating average age', error: err.message });
+  }
+});
 
 module.exports = router;

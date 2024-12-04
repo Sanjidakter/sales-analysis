@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const dashboardRoutes = require('./api/dashboard');
+const mailRoutes = require('./api/send-mail');
 
 // Load environment variables
 dotenv.config();
@@ -19,6 +20,8 @@ connectDB();
 
 // Routes
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api', mailRoutes);  // Adjust the path as needed
+
 
 // Start the server
 const PORT = process.env.PORT || 5000;
