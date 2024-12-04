@@ -44,9 +44,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="https://chic-pasca-8e5b8b.netlify.app/">
           <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a
+          <span>Bar-Chart</span></a
         >
       </li>
 
