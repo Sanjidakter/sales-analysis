@@ -170,6 +170,8 @@ cd sanjida-akter-sales-analysis-assignment
   ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG](#)
 
 ### **Task 2: Analytical Dashboard**
+-**ERD**
+  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png](#)
 - **Dashboard Overview**
   ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG](#)
 
