@@ -164,15 +164,15 @@ cd sanjida-akter-sales-analysis-assignment
 
 ### **Task 1: Bar Charts**
 - **Chart 1**
-  ![Chart 1 Screenshot](#)
+  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task1-bar-chart.JPG](#)
 
 - **Chart 2**
-  ![Chart 2 Screenshot](#)
+  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG](#)
 
 ### **Task 2: Analytical Dashboard**
 - **Dashboard Overview**
-  ![Dashboard Screenshot](#)
+  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG](#)
 
 - **Mail-Sending Feature**
-  ![Mail Feature Screenshot](#)
+  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/send-mail.JPG](#)
 
