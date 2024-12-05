@@ -160,21 +160,23 @@ cd sanjida-akter-sales-analysis-assignment
 
 ---
 
-## **Screenshots**
+## Screenshots
 
-### **Task 1: Bar Charts**
-- **Chart 1**
-  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task1-bar-chart.JPG](#)
+### Task 1: Bar Charts
+- **Chart 1**  
+  ![Chart 1](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task1-bar-chart.JPG)
 
-- **Chart 2**
-  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG](#)
+- **Chart 2**  
+  ![Chart 2](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG)
 
-### **Task 2: Analytical Dashboard**
--**ERD**
-  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png](#)
-- **Dashboard Overview**
-  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG](#)
+### Task 2: Analytical Dashboard
+- **ERD**  
+  ![ERD](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png)
 
-- **Mail-Sending Feature**
-  ![https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/send-mail.JPG](#)
+- **Dashboard Overview**  
+  ![Dashboard Overview](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG)
+
+- **Mail-Sending Feature**  
+  ![Mail Sending Feature](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/send-mail.JPG)
+
 
