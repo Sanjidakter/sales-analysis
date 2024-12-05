@@ -1,5 +1,9 @@
 # task1-line-chart
 
+## Live link: https://capable-sawine-e6a8ab.netlify.app/
+
+## Technologies used: Vuejs & Chart.js
+
 ## Project setup
 ```
 npm install
