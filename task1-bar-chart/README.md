@@ -1,7 +1,3 @@
-Here’s a beautifully crafted README file for your project:
-
----
-
 # Interactive Bar Chart
 
 This project demonstrates an **Interactive Bar Chart** built using **Vue.js**, **Chart.js**, and **JSON data**. The chart visualizes three variables: `Products`, `Total Sales`, and `Total Value`, offering an intuitive, user-friendly, and dynamic experience.
@@ -63,4 +59,3 @@ To run the project locally:
 
 ---
 
-Feel free to personalize it further! Let me know if you'd like more enhancements or specific details.

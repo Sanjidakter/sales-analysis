@@ -11,10 +11,11 @@
         class="sidebar-brand d-flex align-items-center justify-content-center"
         href="/"
       >
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-chart-area"></i>
+        <div class="sidebar-brand-icon" >
+          <!-- <i class="fas fa-chart-area"></i> -->
+           <img style="width: 60px;" src="../../../public/logo.png" alt="">
         </div>
-        <div class="sidebar-brand-text mx-3">Admin</div>
+        <div class="sidebar-brand-text mx-3"></div>
       </a>
 
       <!-- Divider -->

@@ -1,27 +1,29 @@
-const mongoose = require('mongoose');
-const User = require('../models/User');
-const connectDB = require('../config/db');
+app.post("/api/send-mail", async (req, res) => {
+  const { to, subject, message } = req.body;
 
-connectDB(); // Ensure database connection
-
-module.exports = async (req, res) => {
-  if (req.method === 'GET') {
-    try {
-      const users = await User.find();
-      res.status(200).json(users);
-    } catch (err) {
-      res.status(500).json({ message: 'Server error' });
-    }
-  } else if (req.method === 'POST') {
-    try {
-      const newUser = new User(req.body);
-      const savedUser = await newUser.save();
-      res.status(201).json(savedUser);
-    } catch (err) {
-      res.status(400).json({ message: 'Error creating user' });
-    }
-  } else {
-    res.setHeader('Allow', ['GET', 'POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+  // Check if the email address is valid
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(to)) {
+    return res.status(400).json({ error: "Invalid email address" });
   }
-};
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PASSWORD, // Replace with your email password
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: "process.env.EMAIL",
+      to,
+      subject,
+      text: message,
+    });
+    res.status(200).json({ message: "Email sent successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to send email" });
+  }
+});

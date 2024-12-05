@@ -78,26 +78,83 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-<p class="fw-bold fs-3">Reneta Slaes Report </p>
+                    <p class="fw-bold fs-3">Send an E-mail </p>
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div>
-                    <h1>Send Email</h1>
-                    <div>
-                        <label for="customEmail">Enter Email Address:</label>
-                        <input v-model="customEmail" type="email" id="customEmail" placeholder="Enter email address" />
+                <div class="email-right-box m-5">
+                    <div class="toolbar" role="toolbar">
+                        <div class="btn-group m-b-20">
+                            <button type="button" class="btn btn-light"><i class="fa fa-archive"></i>
+                            </button>
+                            <button type="button" class="btn btn-light"><i class="fa fa-exclamation-circle"></i>
+                            </button>
+                            <button type="button" class="btn btn-light"><i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group m-b-20">
+                            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"><i
+                                    class="fa fa-folder"></i> <b class="caret m-l-5"></b>
+                            </button>
+                            <div class="dropdown-menu"><span class="dropdown-header">Move to</span> <a
+                                    class="dropdown-item" href="javascript: void(0);">Social</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Promotions</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Updates</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                            </div>
+                        </div>
+                        <div class="btn-group m-b-20">
+                            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"><i
+                                    class="fa fa-tag"></i> <b class="caret m-l-5"></b>
+                            </button>
+                            <div class="dropdown-menu"><span class="dropdown-header">Label as:</span> <a
+                                    class="dropdown-item" href="javascript: void(0);">Updates</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Social</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Promotions</a>
+                                <a class="dropdown-item" href="javascript: void(0);">Forums</a>
+                            </div>
+                        </div>
+                        <div class="btn-group m-b-20">
+                            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">More
+                                <span class="caret m-l-5"></span>
+                            </button>
+                            <div class="dropdown-menu"><span class="dropdown-header">More Option :</span> <a
+                                    class="dropdown-item" href="javascript: void(0);">Mark as Unread</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Add to Tasks</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Add Star</a> <a
+                                    class="dropdown-item" href="javascript: void(0);">Mute</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="subject">Subject:</label>
-                        <input v-model="emailSubject" type="text" id="subject" />
+                    <div class="compose-content mt-5">
+                        <form action="#">
+                            <div class="form-group">
+                                <input  v-model="customEmail" type="email" id="customEmail" class="form-control bg-transparent" placeholder=" To">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control bg-transparent"  v-model="emailSubject"  id="subject" placeholder=" Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea v-model="emailMessage" id="message" class="textarea_editor form-control bg-light" rows="15"
+                                    placeholder="Enter text ..."></textarea>
+                            </div>
+                        </form>
+                        <h5 class="m-b-20"><i class="fa fa-paperclip m-r-5 f-s-18"></i> Attatchment</h5>
+                        <form action="#" class="dropzone">
+                            <div class="form-group">
+                                <div class="fallback">
+                                    <input class="l-border-1" name="file" type="file" multiple="multiple">
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div>
-                        <label for="message">Message:</label>
-                        <textarea v-model="emailMessage" id="message"></textarea>
+                    <div class="text-left m-t-15">
+                        <button @click="sendMail" class="btn btn-primary m-b-30 m-t-15 f-s-14 p-l-20 p-r-20 m-r-10" type="button"><i
+                                class="fa fa-paper-plane m-r-5"></i> Send</button>
+                        <button class="btn btn-dark m-b-30 m-t-15 f-s-14 p-l-20 p-r-20 ml-2" type="button"><i
+                                class="ti-close m-r-5 f-s-12"></i> Discard</button>
                     </div>
-                    <button @click="sendMail">Send Email</button>
                 </div>
                 <!-- /.container-fluid -->
             </div>
