@@ -50,6 +50,14 @@
         >
       </li>
 
+       <!-- Nav Item - Tables -->
+       <li class="nav-item">
+        <a class="nav-link" href="/mail">
+          <i class="fas fa-envelope"></i>
+          <span>Send Mail</span></a
+        >
+      </li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block" />
 
@@ -239,7 +247,7 @@
             <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
             <a
               href="#"
-              class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+              class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" 
               ><i class="fas fa-download fa-sm text-white-50"></i> Generate
               Report</a
             >
@@ -250,7 +258,6 @@
           <!-- Content Row -->
 
           <div class="row">
-            <BarChart />
             <MyChart />
 
             <!-- <PieChart/> -->
@@ -276,22 +283,37 @@
   </div>
   <!-- End of Page Wrapper -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+ 
 </template>
 
 <script>
-import BarChart from "../Charts/BarChart.vue";
+
 import MyChart from "../Charts/MyChart.vue";
-// import PieChart from '../Charts/PieChart.vue';
+
 
 export default {
   components: {
-    BarChart,
+
     MyChart,
     // PieChart
+  },
+  methods: {
+    printPage() {
+      const printContents = document.getElementById("printable-area").innerHTML; // Specify the container to print
+      const originalContents = document.body.innerHTML;
+
+      // Replace body content with the printable content
+      document.body.innerHTML = printContents;
+
+      // Trigger print dialog
+      window.print();
+
+      // Restore original content
+      document.body.innerHTML = originalContents;
+
+      // Reattach Vue listeners (if needed)
+      window.location.reload();
+    },
   },
 };
 </script>
