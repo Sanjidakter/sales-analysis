@@ -173,11 +173,11 @@ cd sanjida-akter-sales-analysis-assignment
 
 ### **Task 1: Frontend**
 - Interactive and dynamic bar charts.
-- Integrated date-filtering for improved data analysis.
 - Implementation of chart.js in vue for better data visualization
 
 ### **Task 2: Fullstack Application**
 - **Dynamic Dashboard**: Intuitive sidebar navigation with charts and filters.
+- **Dynamic Data Fetching**: All the data are getting fetched from backend api.
 - **Mail-Sending Feature**: Users can send emails directly from the app.
 - **Responsive Design**: Responsive and clean UI, designed using **Bootstrap**
 
