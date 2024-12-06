@@ -147,6 +147,7 @@ cd sanjida-akter-sales-analysis-assignment
    ```bash
    node server.js
    ```
+4. Access the dashboard at `http://localhost:5000`.
 
 #### Frontend
 1. Navigate to the frontend directory:
@@ -162,7 +163,7 @@ cd sanjida-akter-sales-analysis-assignment
    npm run serve
    ```
 
-4. Access the dashboard at `http://localhost:5000`.
+4. Access the dashboard at `http://localhost:8080`.
 
 ---
 
@@ -171,12 +172,12 @@ cd sanjida-akter-sales-analysis-assignment
 ### **Task 1: Frontend**
 - Interactive and dynamic bar charts.
 - Integrated date-filtering for improved data analysis.
-- Responsive and clean UI, designed using **Bootstrap**.
+- Implementation of chart.js in vue for better data visualization
 
 ### **Task 2: Fullstack Application**
 - **Dynamic Dashboard**: Intuitive sidebar navigation with charts and filters.
 - **Mail-Sending Feature**: Users can send emails directly from the app.
-- **Responsive Design**: Optimized for seamless use across devices.
+- **Responsive Design**: Responsive and clean UI, designed using **Bootstrap**
 
 ---
 
