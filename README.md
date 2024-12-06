@@ -100,6 +100,8 @@ This repository contains my submission for the **Full-Stack Developer Assignment
 ### **Task 2: Fullstack Application**
 1. **ERD Design**
    - Created using **draw.io** to visualize database structure and relationships.
+     ![ERD](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png)
+     
 2. **Analytical Dashboard Features**
    - **Sidebar Navigation**: Simplifies user experience.
    - **Interactive Visuals**: Filters and charts for better data insights.
