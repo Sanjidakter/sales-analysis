@@ -1,6 +1,6 @@
 
 
-# ** Sales Analysis Assignment**
+# **Sales Analysis Assignment**
 
 This repository contains my submission for the **Full-Stack Developer Assignment**, showcasing my skills in frontend and full-stack development. The solution is divided into two tasks, focusing on functionality, dynamic implementation, and an intuitive user experience.
 
@@ -14,6 +14,26 @@ This repository contains my submission for the **Full-Stack Developer Assignment
 
 ### **Task 2: Fullstack Analytical Dashboard**
 - **Dashboard**: [View on Vercel](https://analytical-dashboard-frontend.vercel.app/)
+
+---
+## Screenshots
+
+### Task 1: Bar Charts
+- **Chart 1**  
+  ![Chart 1](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task1-bar-chart.JPG)
+
+- **Chart 2**  
+  ![Chart 2](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG)
+
+### Task 2: Analytical Dashboard
+- **ERD**  
+  ![ERD](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png)
+
+- **Dashboard Overview**  
+  ![Dashboard Overview](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG)
+
+- **Mail-Sending Feature**  
+  ![Mail Sending Feature](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/send-mail.JPG)
 
 ---
 
@@ -160,23 +180,6 @@ cd sanjida-akter-sales-analysis-assignment
 
 ---
 
-## Screenshots
 
-### Task 1: Bar Charts
-- **Chart 1**  
-  ![Chart 1](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task1-bar-chart.JPG)
-
-- **Chart 2**  
-  ![Chart 2](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/line-chart.JPG)
-
-### Task 2: Analytical Dashboard
-- **ERD**  
-  ![ERD](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/ERD_Customer.png)
-
-- **Dashboard Overview**  
-  ![Dashboard Overview](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/task-2-filter.JPG)
-
-- **Mail-Sending Feature**  
-  ![Mail Sending Feature](https://github.com/Sanjidakter/sanjida-akter-sales-analysis-assignment/blob/main/send-mail.JPG)
 
 
