@@ -1,8 +1,8 @@
 
 
-# **Sales Analysis Assignment**
+# **Sales Analysis**
 
-This repository contains my submission for the **Full-Stack Developer Assignment**, showcasing my skills in frontend and full-stack development. The solution is divided into two tasks, focusing on functionality, dynamic implementation, and an intuitive user experience.
+ The solution is divided into two tasks, focusing on functionality, dynamic implementation, and an intuitive user experience.
 
 ---
 
